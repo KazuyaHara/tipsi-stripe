@@ -92,9 +92,6 @@ RCT_EXPORT_METHOD(createTokenWithCard:(NSDictionary *)params
     [cardParams setAddressCountry: params[@"addressCountry"]];
     [cardParams setAddressZip: params[@"addressZip"]];
 
-    // cardParams.expMonth = [params[@"expMonth"] integerValue];
-    // cardParams.expYear = [params[@"expYear"] integerValue];
-
     [[STPAPIClient sharedClient] createTokenWithCard:cardParams completion:^(STPToken *token, NSError *error) {
         requestIsCompleted = YES;
 
